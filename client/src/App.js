@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Modules/Home/Home";
-import Account from "./Modules/Account/Account";
+//import Account from "./Modules/Account/Account";
 import Experience from "./Modules/Experience/Experience";
 import Skills from "./Modules/Skills/Skills";
 import Academics from "./Modules/Academics/Academics";
@@ -12,18 +12,18 @@ import { faUser } from "@fortawesome/free-solid-svg-icons"; // Import Font Aweso
 
 const App = () => {
   // Define the menu items for the dropdown
-  const profileMenuItems = [
-    {
-      label: "Account",
-      navigate: "/account", // This will trigger navigation to the Account page
-    },
-    {
-      label: "Logout",
-      onClick: () => {
-        console.log("Logout clicked");
-      },
-    },
-  ];
+  // const profileMenuItems = [
+  //   {
+  //     label: "Account",
+  //     navigate: "/account", // This will trigger navigation to the Account page
+  //   },
+  //   {
+  //     label: "Logout",
+  //     onClick: () => {
+  //       console.log("Logout clicked");
+  //     },
+  //   },
+  // ];
 
   return (
     <Router>
@@ -69,7 +69,7 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/account" element={<Account />} />
+            {/* <Route path="/account" element={<Account />} /> */}
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
