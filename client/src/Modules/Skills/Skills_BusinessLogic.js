@@ -14,7 +14,8 @@ export class Skills_BusinessLogic {
   async fetchSkillsData(objContext) {
     try {
       const skills = await fetchData({
-        endpoint: "https://localhost:7090/api/Skills/GetData",
+        endpoint:
+          "https://my-api-portfolio-e6bmdse4e6h3azgw.canadacentral-01.azurewebsites.net/api/Skills/GetData",
       });
       objContext.dispatch({
         type: "SET_SKILLS",

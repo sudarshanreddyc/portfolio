@@ -14,7 +14,8 @@ export class Academics_BusinessLogic {
   async fetchAcademicsData(objContext) {
     try {
       const academics = await fetchData({
-        endpoint: "https://localhost:7090/API/Academics/GetData",
+        endpoint:
+          "https://my-api-portfolio-e6bmdse4e6h3azgw.canadacentral-01.azurewebsites.net/API/Academics/GetData",
       });
       objContext.dispatch({
         type: "SET_ACADEMICS",

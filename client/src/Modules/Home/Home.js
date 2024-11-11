@@ -21,11 +21,11 @@ const Home = () => {
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-100">
       <div className="max-w-4xl bg-white shadow-md rounded-lg p-6">
         <h1 className="text-3xl font-bold mb-4">
-          👋 Hello, I'm Sudarshan Reddy Chennamareddygagri!
+          👋 Hello, I'm Sudarshan Reddy Chennamareddygari!
         </h1>
         <p className="text-lg mb-4">
           I'm currently pursuing my Master of Science in Information Studies at{" "}
-          <strong>Trine University</strong> and bring 4 years of experience as a{" "}
+          <strong>Trine University</strong> and bring 5 years of experience as a{" "}
           <strong>Full Stack Developer</strong>. My passion for programming and
           technology drives me to constantly improve and learn new skills.
         </p>
