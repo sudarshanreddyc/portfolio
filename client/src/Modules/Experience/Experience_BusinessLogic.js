@@ -15,7 +15,7 @@ export class Experience_BusinessLogic {
     try {
       const experiences = await fetchData({
         endpoint:
-          "https://my-api-portfolio-e6bmdse4e6h3azgw.canadacentral-01.azurewebsites.net/api/Experience/GetData",
+          "https://myportifolioapi.azurewebsites.net/api/Experience/GetData",
       });
       objContext.dispatch({
         type: "SET_EXPERIENCES",

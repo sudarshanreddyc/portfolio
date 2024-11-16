@@ -15,7 +15,7 @@ export class Skills_BusinessLogic {
     try {
       const skills = await fetchData({
         endpoint:
-          "https://my-api-portfolio-e6bmdse4e6h3azgw.canadacentral-01.azurewebsites.net/api/Skills/GetData",
+          "https://myportifolioapi.azurewebsites.net/api/Skills/GetData",
       });
       objContext.dispatch({
         type: "SET_SKILLS",
