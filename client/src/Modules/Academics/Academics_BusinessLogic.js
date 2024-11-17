@@ -16,7 +16,8 @@ export class Academics_BusinessLogic {
     try {
       objContext.reduxDispatch(showLoader());
       const academics = await fetchData({
-        endpoint: "https://localhost:7090/API/Academics/GetData",
+        endpoint:
+          "https://myportifolioapi.azurewebsites.net/API/Academics/GetData",
       });
       objContext.dispatch({
         type: "SET_STATE",

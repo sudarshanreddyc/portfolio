@@ -16,7 +16,8 @@ export class Skills_BusinessLogic {
     try {
       objContext.reduxDispatch(showLoader());
       const skills = await fetchData({
-        endpoint: "https://localhost:7090/api/Skills/GetData",
+        endpoint:
+          "https://myportifolioapi.azurewebsites.net/api/Skills/GetData",
       });
       objContext.dispatch({
         type: "SET_STATE",

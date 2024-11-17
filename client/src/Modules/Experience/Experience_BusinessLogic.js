@@ -16,7 +16,8 @@ export class Experience_BusinessLogic {
     try {
       objContext.reduxDispatch(showLoader());
       const experiences = await fetchData({
-        endpoint: "https://localhost:7090/api/Experience/GetData",
+        endpoint:
+          "https://myportifolioapi.azurewebsites.net/api/Experience/GetData",
       });
       objContext.dispatch({
         type: "SET_STATE",
