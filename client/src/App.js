@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Modules/Home/Home";
-import Account from "./Modules/Account/Account";
+// import Account from "./Modules/Account/Account";
 import Experience from "./Modules/Experience/Experience";
 import Skills from "./Modules/Skills/Skills";
 import Academics from "./Modules/Academics/Academics";
@@ -10,7 +10,7 @@ import Dropdown from "./Components/Dropdown"; // Import Dropdown
 import Loader from "./Components/Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons"; // Import Font Awesome User Icon
-import LoginSignup from "./Modules/Login/LoginSignup";
+// import LoginSignup from "./Modules/Login/LoginSignup";
 
 const App = () => {
   // Define the menu items for the dropdown
@@ -75,8 +75,8 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/loginsignup" element={<LoginSignup />} />
+            {/* <Route path="/account" element={<Account />} /> */}
+            {/* <Route path="/loginsignup" element={<LoginSignup />} /> */}
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
