@@ -1,7 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
+  mode: "production",
+  devtool: false, // Ensure this is set
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -12,15 +15,23 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: {
+          loader: "babel-loader",
+          options: {
+            sourceMaps: true, // Ensure Babel generates source maps
+          },
+        },
       },
       {
-        test: /\.css$/, // Ensure this rule is present
-        use: ["style-loader", "css-loader", "postcss-loader"], // postcss-loader is essential for Tailwind
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
   plugins: [
+    new SourceMapDevToolPlugin({
+      filename: "[file].map", // Generate source maps for all files
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
@@ -33,7 +44,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: 3000,
-    historyApiFallback: true, // Add this line to fallback to index.html
+    historyApiFallback: true,
     hot: true,
   },
 };

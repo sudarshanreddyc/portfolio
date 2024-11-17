@@ -2,30 +2,16 @@ import { useEffect } from "react";
 
 export const initialState = {
   experiences: [], // List of added experiences
-  newExperience: {
-    jobTitle: "",
-    company: "",
-    responsibilities: "",
-    fromDate: "",
-    toDate: "",
-  },
+  isDataLoaded: false,
 };
 
 // Reducer function to manage state
 export const experienceReducer = (state, action) => {
   switch (action.type) {
-    case "UPDATE_FIELD":
+    case "SET_STATE":
       return {
         ...state,
-        newExperience: {
-          ...state.newExperience,
-          [action.field]: action.value,
-        },
-      };
-    case "SET_EXPERIENCES":
-      return {
-        ...state,
-        experiences: action.payload,
+        ...action.payload,
       };
     default:
       return state;
@@ -35,6 +21,8 @@ export const experienceReducer = (state, action) => {
 // Custom hook to initialize experience data fetch
 export const useFetchExperiences = (objContext) => {
   useEffect(() => {
-    objContext.Experience_BusinessLogic.fetchExperienceData(objContext);
-  }, [objContext]);
+    if (!objContext.state.isDataLoaded) {
+      objContext.Experience_BusinessLogic.fetchExperienceData(objContext);
+    }
+  }, [objContext.state.isDataLoaded]);
 };

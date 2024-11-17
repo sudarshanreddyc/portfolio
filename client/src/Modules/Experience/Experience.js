@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import { useDispatch } from "react-redux";
 import * as Experience_Hook from "./Experience_Hook";
 import * as Experience_BusinessLogic from "./Experience_BusinessLogic";
 
@@ -8,9 +9,13 @@ const Experience = () => {
     Experience_Hook.initialState
   );
 
+  //Redux dispatch to update the loader state or any other redux related states
+  const reduxDispatch = useDispatch();
+
   const objContext = {
     state,
     dispatch,
+    reduxDispatch,
     Experience_BusinessLogic:
       new Experience_BusinessLogic.Experience_BusinessLogic(),
   };
@@ -20,12 +25,8 @@ const Experience = () => {
 
   return (
     <div className="min-h-screen p-8 bg-gray-100 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6">My Experiences</h1>
-
-      <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6 mb-6">
-        {state.experiences.length === 0 ? (
-          <p>No experiences added yet.</p>
-        ) : (
+      {state.isDataLoaded ? ( // Check if isDataLoaded is true
+        <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6 mb-6">
           <ul>
             {state.experiences.map((experience, index) => (
               <li key={index} className="mb-4">
@@ -47,8 +48,10 @@ const Experience = () => {
               </li>
             ))}
           </ul>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="text-gray-500">Loading data, please wait...</div>
+      )}
     </div>
   );
 };

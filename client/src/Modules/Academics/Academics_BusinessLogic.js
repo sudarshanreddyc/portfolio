@@ -1,4 +1,5 @@
 import { fetchData } from "../../Services/portfolioservice";
+import { hideLoader, showLoader } from "../../Redux/loader";
 
 export class Academics_BusinessLogic {
   // Handle form input changes
@@ -13,16 +14,28 @@ export class Academics_BusinessLogic {
   // Fetch academics data from the API
   async fetchAcademicsData(objContext) {
     try {
+      objContext.reduxDispatch(showLoader());
       const academics = await fetchData({
-        endpoint:
-          "https://myportifolioapi.azurewebsites.net/API/Academics/GetData",
+        endpoint: "https://localhost:7090/API/Academics/GetData",
       });
       objContext.dispatch({
-        type: "SET_ACADEMICS",
-        payload: academics,
+        type: "SET_STATE",
+        payload: {
+          academics: academics,
+        },
       });
     } catch (error) {
       console.error("Failed to fetch academics data:", error);
+    } finally {
+      setTimeout(() => {
+        objContext.reduxDispatch(hideLoader());
+        objContext.dispatch({
+          type: "SET_STATE",
+          payload: {
+            isDataLoaded: true,
+          },
+        });
+      }, 500);
     }
   }
 }

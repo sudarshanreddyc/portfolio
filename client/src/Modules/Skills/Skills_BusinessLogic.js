@@ -1,3 +1,4 @@
+import { hideLoader, showLoader } from "../../Redux/loader";
 import { fetchData } from "../../Services/portfolioservice";
 
 export class Skills_BusinessLogic {
@@ -13,16 +14,28 @@ export class Skills_BusinessLogic {
   // Fetch skills data from the API
   async fetchSkillsData(objContext) {
     try {
+      objContext.reduxDispatch(showLoader());
       const skills = await fetchData({
-        endpoint:
-          "https://myportifolioapi.azurewebsites.net/api/Skills/GetData",
+        endpoint: "https://localhost:7090/api/Skills/GetData",
       });
       objContext.dispatch({
-        type: "SET_SKILLS",
-        payload: skills,
+        type: "SET_STATE",
+        payload: {
+          skills: skills,
+        },
       });
     } catch (error) {
       console.error("Failed to fetch skills data:", error);
+    } finally {
+      setTimeout(() => {
+        objContext.reduxDispatch(hideLoader());
+        objContext.dispatch({
+          type: "SET_STATE",
+          payload: {
+            isDataLoaded: true,
+          },
+        });
+      }, 500);
     }
   }
 }

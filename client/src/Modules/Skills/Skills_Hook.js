@@ -2,27 +2,16 @@ import { useEffect } from "react";
 
 export const initialState = {
   skills: [], // List of added skills
-  newSkill: {
-    skillName: "",
-    proficiency: "",
-  },
+  isDataLoaded: false,
 };
 
 // Reducer function to manage state
 export const skillsReducer = (state, action) => {
   switch (action.type) {
-    case "UPDATE_FIELD":
+    case "SET_STATE":
       return {
         ...state,
-        newSkill: {
-          ...state.newSkill,
-          [action.field]: action.value,
-        },
-      };
-    case "SET_SKILLS":
-      return {
-        ...state,
-        skills: action.payload,
+        ...action.payload,
       };
     default:
       return state;
@@ -32,6 +21,8 @@ export const skillsReducer = (state, action) => {
 // Custom hook to initialize skills data fetch
 export const useFetchSkills = (objContext) => {
   useEffect(() => {
-    objContext.Skills_BusinessLogic.fetchSkillsData(objContext);
-  }, []);
+    if (!objContext.state.isDataLoaded) {
+      objContext.Skills_BusinessLogic.fetchSkillsData(objContext);
+    }
+  }, [objContext.state.isDataLoaded]);
 };

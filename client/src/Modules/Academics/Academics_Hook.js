@@ -2,30 +2,16 @@ import { useEffect } from "react";
 
 export const initialState = {
   academics: [], // List of added academics
-  newAcademic: {
-    school: "",
-    grade: "",
-    level: "",
-    fromDate: "",
-    toDate: "",
-  },
+  isDataLoaded: false,
 };
 
 // Reducer function to manage state
 export const academicsReducer = (state, action) => {
   switch (action.type) {
-    case "UPDATE_FIELD":
+    case "SET_STATE":
       return {
         ...state,
-        newAcademic: {
-          ...state.newAcademic,
-          [action.field]: action.value,
-        },
-      };
-    case "SET_ACADEMICS":
-      return {
-        ...state,
-        academics: action.payload,
+        ...action.payload,
       };
     default:
       return state;
@@ -35,6 +21,8 @@ export const academicsReducer = (state, action) => {
 // Custom hook to initialize academics data fetch
 export const useFetchAcademics = (objContext) => {
   useEffect(() => {
-    objContext.Academics_BusinessLogic.fetchAcademicsData(objContext);
-  }, []);
+    if (!objContext.state.isDataLoaded) {
+      objContext.Academics_BusinessLogic.fetchAcademicsData(objContext);
+    }
+  }, [objContext.state.isDataLoaded]);
 };
