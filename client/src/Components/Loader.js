@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const Loader = () => {
   const blnShowLoader = useSelector((state) => state.loader.blnShowLoader);
-  console.log("Loader state:", blnShowLoader);
 
   if (!blnShowLoader) return null;
 

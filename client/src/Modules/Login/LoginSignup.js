@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { fetchData } from "../../Services/portfolioservice";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const LoginSignup = () => {
   const navigate = useNavigate(); // Initialize navigate hook
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(true); //To decide which form to show login or signup
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -20,12 +21,28 @@ const LoginSignup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isLogin) {
-      // Assume login is always successful for now
-      console.log("Logging in with: ", formData);
-      navigate("/home"); // Navigate to Home page on successful login
+      try {
+        // Call the login API
+        const response = await fetchData({
+          endpoint: "https://localhost:7090/API/Login/ValidateUser", // Replace with your API endpoint
+          method: "POST",
+          body: {
+            username: formData.username,
+            password: formData.password,
+          },
+        });
+
+        // Handle successful login
+        console.log("Login successful:", response);
+        localStorage.setItem("token", response.token); // Save JWT to localStorage
+        navigate("/"); // Navigate to the home page
+      } catch (error) {
+        console.error("Login failed:", error);
+        alert("Invalid login credentials");
+      }
     } else {
       console.log("Signing up with: ", formData);
     }

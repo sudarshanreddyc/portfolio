@@ -2,8 +2,11 @@ import React, { useReducer } from "react";
 import { useDispatch } from "react-redux";
 import * as Experience_Hook from "./Experience_Hook";
 import * as Experience_BusinessLogic from "./Experience_BusinessLogic";
+import { useAuth } from "../../Hooks/AuthHook";
 
 const Experience = () => {
+  //check if user is authorized or not.
+  //useAuth();
   const [state, dispatch] = useReducer(
     Experience_Hook.experienceReducer,
     Experience_Hook.initialState

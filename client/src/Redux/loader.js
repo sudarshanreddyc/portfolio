@@ -7,11 +7,9 @@ const loaderSlice = createSlice({
   },
   reducers: {
     showLoader: (state) => {
-      console.log("Dispatching showLoader");
       state.blnShowLoader = true;
     },
     hideLoader: (state) => {
-      console.log("Dispatching hideLoader");
       state.blnShowLoader = false;
     },
   },
