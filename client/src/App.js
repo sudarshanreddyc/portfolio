@@ -6,6 +6,7 @@ import Experience from "./Modules/Experience/Experience";
 import Skills from "./Modules/Skills/Skills";
 import Academics from "./Modules/Academics/Academics";
 import About from "./Modules/About/About";
+import Certifications from "./Modules/Certifications/Certifications";
 import Dropdown from "./Components/Dropdown"; // Import Dropdown
 import Loader from "./Components/Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,6 +44,9 @@ const App = () => {
                 <Link to="/experience">Experience</Link>{" "}
               </li>
               <li className="cursor-pointer hover:text-gray-200">
+                <Link to="/certifications">Certifications</Link>{" "}
+              </li>
+              <li className="cursor-pointer hover:text-gray-200">
                 <Link to="/academics">Academics</Link>
               </li>
               <li className="cursor-pointer hover:text-gray-200">
@@ -75,6 +79,7 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/skills" element={<Skills />} />
+            <Route path="/certifications" element={<Certifications />} />
             {/* <Route path="/account" element={<Account />} /> */}
             <Route path="/loginsignup" element={<LoginSignup />} />
             <Route path="/about" element={<About />} />

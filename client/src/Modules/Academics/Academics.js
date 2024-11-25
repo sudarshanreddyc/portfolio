@@ -35,9 +35,19 @@ const Academics = () => {
                   Level: {academic.level}
                 </div>
                 <div className="text-sm text-gray-700">
-                  Percentage/Grade: {academic.percentage}
+                  Percentage/Grade:{" "}
+                  {academic.percentage +
+                    "/" +
+                    (academic.level == "graduate"
+                      ? "4"
+                      : academic.level == "undergraduate"
+                      ? "10"
+                      : "1000")}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-gray-700">
+                  Location: {academic.location}
+                </div>
+                <div className="text-sm text-gray-700">
                   From: {academic.fromDate} - To: {academic.toDate}
                 </div>
               </li>

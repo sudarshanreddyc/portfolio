@@ -34,15 +34,17 @@ const Experience = () => {
             {state.experiences.map((experience, index) => (
               <li key={index} className="mb-4">
                 <div className="text-lg font-bold">{experience.jobTitle}</div>
-                <div className="text-sm text-gray-700">
+                <div className="text-sm text-gray-700 pb-2">
                   <span className="font-bold">Company: </span>
                   {experience.company}
                 </div>
-                <div className="text-sm text-gray-700">
-                  <span className="font-bold">Responsibilities:</span>{" "}
-                  {experience.responsibilities}
+                <div className="text-sm text-gray-700 pb-2">
+                  <div className="font-bold">Responsibilities:</div>{" "}
+                  <div style={{ whiteSpace: "pre-line" }}>
+                    {experience.responsibilities}
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-gray-700">
                   <span className="font-bold">From: </span>
                   {experience.fromDate}
                   <span className="font-bold"> - To: </span>
