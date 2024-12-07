@@ -15,10 +15,41 @@ export class Academics_BusinessLogic {
   async fetchAcademicsData(objContext) {
     try {
       objContext.reduxDispatch(showLoader());
-      const academics = await fetchData({
-        endpoint:
-          "https://myportifolioapi.azurewebsites.net/API/Academics/GetData",
-      });
+      // const academics = await fetchData({
+      //   endpoint:
+      //     "https://myportifolioapi.azurewebsites.net/API/Academics/GetData",
+      // });
+
+      const academics = [
+        {
+          id: 1,
+          school: "Trine University",
+          percentage: 4.0,
+          level: "Graduate",
+          location: "Detroit, MI, United States",
+          fromDate: "2024-08-01",
+          toDate: "2024-08-01",
+        },
+        {
+          id: 2,
+          school: "Lovely Professional University",
+          percentage: 9.54,
+          level: "Undergraduate",
+          location: "Punjab, India",
+          fromDate: "2016-07-01",
+          toDate: "2020-06-01",
+        },
+        {
+          id: 3,
+          school: "Sri Sai Jr College",
+          percentage: 97.5,
+          level: "Intermediate",
+          location: "Anantapur, Andhrapradesh, India",
+          fromDate: "2014-06-01",
+          toDate: "2016-03-25",
+        },
+      ];
+
       objContext.dispatch({
         type: "SET_STATE",
         payload: {
