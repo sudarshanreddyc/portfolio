@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <div className="min-h-screen flex flex-col">
         {/* Navigation Bar */}
-        <nav className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-4 fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <nav className="bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-white p-4 fixed top-0 left-0 right-0 z-50 shadow-lg">
           <div className="flex justify-between items-center">
             {/* Logo or App Name */}
             <div className="text-2xl font-extrabold tracking-wide">

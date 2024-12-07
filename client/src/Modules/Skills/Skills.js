@@ -31,7 +31,7 @@ const Skills = () => {
   }, {});
 
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex flex-col items-center">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 flex flex-col items-center">
       {objContext.state.isDataLoaded ? (
         <div className="flex flex-wrap gap-8 justify-center">
           {Object.entries(groupedSkills).map(([category, skills], index) => (
@@ -58,9 +58,9 @@ const Skills = () => {
           ))}
         </div>
       ) : (
-        <div className="text-xl font-semibold text-white text-gray-700 animate-pulse flex">
+        <div className="text-xl font-semibold text-gray-800 animate-pulse flex items-center space-x-4">
           <svg
-            className="animate-spin h-8 w-8 text-white mb-4"
+            className="animate-spin h-8 w-8 text-gray-600"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -79,7 +79,7 @@ const Skills = () => {
               d="M4 12a8 8 0 018-8v8H4z"
             ></path>
           </svg>
-          Loading data, please wait...
+          <span>Loading data, please wait...</span>
         </div>
       )}
     </div>

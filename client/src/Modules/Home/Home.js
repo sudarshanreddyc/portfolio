@@ -28,9 +28,9 @@ const Home = () => {
     <div>
       {/* Main Content */}
       <div className="content">
-        <div className="min-h-screen flex justify-center p-8 bg-gray-100">
+        <div className="min-h-screen flex justify-center p-8 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400">
           {!state.showLoader ? (
-            <div className="max-w-4xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 shadow-lg rounded-lg p-10 text-white">
+            <div className="max-w-4xl bg-white shadow-lg rounded-lg p-10 text-gray-800">
               <h1 className="text-4xl font-extrabold mb-6">
                 👋 Hello, I'm Sudarshan Reddy Chennamareddygari!
               </h1>
@@ -95,16 +95,16 @@ const Home = () => {
                 <strong>📧 Reach me at:</strong>{" "}
                 <a
                   href="mailto:sudarshanreddy.c123@gmail.com"
-                  className="text-yellow-300"
+                  className="text-blue-600"
                 >
                   sudarshanreddy.c123@gmail.com
                 </a>
               </p>
             </div>
           ) : (
-            <div className="text-xl font-semibold text-gray-700 animate-pulse flex">
+            <div className="text-xl font-semibold text-gray-800 animate-pulse flex space-x-4">
               <svg
-                className="animate-spin h-8 w-8 text-blue-500 mb-4"
+                className="animate-spin h-8 w-8 text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ const Home = () => {
                   d="M4 12a8 8 0 018-8v8H4z"
                 ></path>
               </svg>
-              Loading data, please wait...
+              <span>Loading data, please wait...</span>
             </div>
           )}
         </div>

@@ -37,7 +37,7 @@ const Certifications = () => {
   }, []);
 
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-teal-400 via-blue-500 to-indigo-600 flex flex-col items-center">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 flex flex-col items-center">
       {isDataLoaded ? (
         <div className="w-full max-w-4xl bg-white shadow-xl rounded-xl p-8">
           <h1 className="text-3xl font-extrabold text-indigo-700 mb-6 text-center">
@@ -68,9 +68,9 @@ const Certifications = () => {
           </ul>
         </div>
       ) : (
-        <div className="text-xl font-semibold text-white text-gray-700 animate-pulse flex">
+        <div className="text-xl font-semibold text-gray-800 animate-pulse flex items-center space-x-4">
           <svg
-            className="animate-spin h-8 w-8 text-white mb-4"
+            className="animate-spin h-8 w-8 text-gray-600"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -89,7 +89,7 @@ const Certifications = () => {
               d="M4 12a8 8 0 018-8v8H4z"
             ></path>
           </svg>
-          Loading data, please wait...
+          <span>Loading data, please wait...</span>
         </div>
       )}
     </div>
