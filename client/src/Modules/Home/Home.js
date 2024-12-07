@@ -26,12 +26,9 @@ const Home = () => {
 
   return (
     <div>
-      {/* Ensure Navbar is rendered only once */}
-      {/* <Navbar /> */}
-
       {/* Main Content */}
       <div className="content">
-        <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-100">
+        <div className="min-h-screen flex justify-center p-8 bg-gray-100">
           {!state.showLoader ? (
             <div className="max-w-4xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 shadow-lg rounded-lg p-10 text-white">
               <h1 className="text-4xl font-extrabold mb-6">
@@ -105,7 +102,29 @@ const Home = () => {
               </p>
             </div>
           ) : (
-            <div className="text-gray-500">Loading data, please wait...</div>
+            <div className="text-xl font-semibold text-gray-700 animate-pulse flex">
+              <svg
+                className="animate-spin h-8 w-8 text-blue-500 mb-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+              Loading data, please wait...
+            </div>
           )}
         </div>
       </div>
