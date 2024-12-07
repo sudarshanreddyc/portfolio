@@ -30,7 +30,18 @@ export class Skills_BusinessLogic {
           proficiency: null,
           category: "Languages",
         },
-        { id: 10, skill: "MySQL", proficiency: null, category: "Languages" },
+        {
+          id: 9,
+          skill: "TypeScript",
+          proficiency: null,
+          category: "Languages",
+        },
+        {
+          id: 10,
+          skill: "Microsoft SQL Server",
+          proficiency: null,
+          category: "Languages",
+        },
         { id: 11, skill: "HTML/CSS", proficiency: null, category: "Languages" },
         { id: 12, skill: "React", proficiency: null, category: "Frameworks" },
         {
