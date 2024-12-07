@@ -31,20 +31,26 @@ const Skills = () => {
   }, {});
 
   return (
-    <div className="min-h-screen p-8 bg-gray-100 flex flex-col items-center">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex flex-col items-center">
       {objContext.state.isDataLoaded ? (
-        <div className="flex flex-wrap gap-6">
+        <div className="flex flex-wrap gap-8 justify-center">
           {Object.entries(groupedSkills).map(([category, skills], index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-lg p-6 flex flex-col min-h-[200px]"
+              className="bg-white shadow-xl rounded-lg p-8 w-[300px] md:w-[350px] lg:w-[400px] flex flex-col"
             >
-              <div className="text-xl font-bold mb-4">{category}</div>
+              <div className="text-2xl font-extrabold text-purple-600 mb-4 text-center">
+                {category}
+              </div>
               <ul className="flex-1">
                 {skills.map((skill, index) => (
-                  <li key={index} className="mb-2 flex justify-between">
-                    <div className="text-lg">{skill.skill}</div>
-                    {/* <div className="text-sm text-gray-700">Proficiency: {skill.proficiency}</div> */}
+                  <li
+                    key={index}
+                    className="mb-3 flex justify-between items-center text-lg border-b border-gray-200 pb-2"
+                  >
+                    <div className="text-gray-800 font-medium">
+                      {skill.skill}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -52,7 +58,9 @@ const Skills = () => {
           ))}
         </div>
       ) : (
-        <div className="text-gray-500">Loading data, please wait...</div>
+        <div className="text-2xl font-semibold text-white animate-pulse">
+          Loading data, please wait...
+        </div>
       )}
     </div>
   );

@@ -24,38 +24,48 @@ const Academics = () => {
   Academics_Hook.useFetchAcademics(objContext);
 
   return (
-    <div className="min-h-screen p-8 bg-gray-100 flex flex-col items-center">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 flex flex-col items-center">
       {state.isDataLoaded ? (
-        <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-6 mb-6">
-          <ul>
+        <div className="w-full max-w-4xl bg-white shadow-xl rounded-xl p-8">
+          <h1 className="text-3xl font-extrabold text-purple-700 mb-6 text-center">
+            Academic Background
+          </h1>
+          <ul className="space-y-6">
             {state.academics.map((academic, index) => (
-              <li key={index} className="mb-4">
-                <div className="text-lg font-bold">{academic.school}</div>
-                <div className="text-sm text-gray-700">
-                  Level: {academic.level}
+              <li
+                key={index}
+                className="p-6 bg-gray-100 rounded-lg shadow-md flex flex-col"
+              >
+                <div className="text-lg font-semibold text-gray-800">
+                  {academic.school}
                 </div>
-                <div className="text-sm text-gray-700">
-                  Percentage/Grade:{" "}
+                <div className="text-sm text-gray-700 mb-2">
+                  <span className="font-bold">Level:</span> {academic.level}
+                </div>
+                <div className="text-sm text-gray-700 mb-2">
+                  <span className="font-bold">Percentage/Grade:</span>{" "}
                   {academic.percentage +
                     "/" +
-                    (academic.level == "graduate"
+                    (academic.level === "Graduate"
                       ? "4"
-                      : academic.level == "undergraduate"
+                      : academic.level === "Undergraduate"
                       ? "10"
-                      : "1000")}
+                      : "100")}
+                </div>
+                <div className="text-sm text-gray-700 mb-2">
+                  <span className="font-bold">Location:</span>{" "}
+                  {academic.location}
                 </div>
                 <div className="text-sm text-gray-700">
-                  Location: {academic.location}
-                </div>
-                <div className="text-sm text-gray-700">
-                  From: {academic.fromDate} - To: {academic.toDate}
+                  <span className="font-bold">Duration:</span>{" "}
+                  {academic.fromDate} - {academic.toDate}
                 </div>
               </li>
             ))}
           </ul>
         </div>
       ) : (
-        <div className="text-gray-500">
+        <div className="text-xl font-semibold text-white animate-pulse">
           Loading academic data, please wait...
         </div>
       )}
