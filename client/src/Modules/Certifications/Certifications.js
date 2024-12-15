@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-const Certifications = () => {
+const Certifications = ({ theme }) => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [certifications, setCertifications] = useState([]);
 
@@ -33,65 +34,75 @@ const Certifications = () => {
         },
       ]);
       setIsDataLoaded(true);
-    }, 500); // Simulated delay
+    }, 500);
   }, []);
 
+  // Framer-motion animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: i * 0.2 },
+    }),
+  };
+
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 flex flex-col items-center">
-      {isDataLoaded ? (
-        <div className="w-full max-w-4xl bg-white shadow-xl rounded-xl p-8">
-          <h1 className="text-3xl font-extrabold text-indigo-700 mb-6 text-center">
-            Certifications
-          </h1>
-          <ul className="space-y-6">
-            {certifications.map((cert, index) => (
-              <li
-                key={index}
-                className="p-4 bg-gray-100 rounded-lg shadow-md flex flex-col"
-              >
-                <div className="text-lg font-semibold text-gray-800 mb-1">
-                  {cert.title}
-                </div>
-                <div className="text-sm text-gray-600">{cert.provider}</div>
-                {cert.url && (
-                  <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 text-blue-600 underline hover:text-blue-800"
-                  >
-                    View Certification
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div className="text-xl font-semibold text-gray-800 animate-pulse flex items-center space-x-4">
-          <svg
-            className="animate-spin h-8 w-8 text-gray-600"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
+    <div
+      className={`min-h-screen p-8 flex flex-col items-center ${
+        theme === "dark"
+          ? "bg-gray-900 text-white"
+          : "bg-gray-100 text-gray-900"
+      }`}
+    >
+      <h1
+        className={`text-4xl font-extrabold mb-8 ${
+          theme === "dark" ? "text-blue-400" : "text-indigo-700"
+        }`}
+      >
+        Certifications
+      </h1>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl"
+        initial="hidden"
+        animate="visible"
+      >
+        {certifications.map((cert, index) => (
+          <motion.div
+            key={index}
+            custom={index}
+            variants={cardVariants}
+            className={`p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 ${
+              theme === "dark"
+                ? "bg-gray-800 border border-gray-700"
+                : "bg-white border border-gray-200"
+            }`}
           >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v8H4z"
-            ></path>
-          </svg>
-          <span>Loading data, please wait...</span>
-        </div>
-      )}
+            <h2
+              className={`text-xl font-semibold mb-2 ${
+                theme === "dark" ? "text-blue-300" : "text-indigo-600"
+              }`}
+            >
+              {cert.title}
+            </h2>
+            <p className="text-sm mb-4">{cert.provider}</p>
+            {cert.url && (
+              <a
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-block text-sm font-semibold underline ${
+                  theme === "dark"
+                    ? "text-blue-400 hover:text-blue-600"
+                    : "text-blue-600 hover:text-blue-800"
+                }`}
+              >
+                View Certification
+              </a>
+            )}
+          </motion.div>
+        ))}
+      </motion.div>
     </div>
   );
 };
