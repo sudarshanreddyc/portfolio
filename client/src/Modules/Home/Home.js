@@ -43,8 +43,11 @@ const Home = ({ theme }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+        <h1 className="text-4xl font-bold mb-4">
+          Sudarshan Reddy Chennamareddygari
+        </h1>
         <motion.h1
-          className="text-5xl font-bold mb-6"
+          className="text-3xl font-bold mb-6"
           key={currentTitle}
           variants={titleVariants}
           initial="hidden"
