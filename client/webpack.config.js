@@ -4,11 +4,12 @@ const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
   mode: "production",
-  devtool: false, // Ensure this is set
+  devtool: false, // Disable default source maps
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"), // Output folder
     filename: "bundle.js",
+    publicPath: "/portfolio/", // Important for GitHub Pages deployment
   },
   module: {
     rules: [
@@ -18,7 +19,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            sourceMaps: true, // Ensure Babel generates source maps
+            sourceMaps: true, // Generate source maps via Babel
           },
         },
       },
@@ -33,7 +34,7 @@ module.exports = {
       filename: "[file].map", // Generate source maps for all files
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./public/index.html", // Reference to index.html
     }),
   ],
   resolve: {
@@ -44,7 +45,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: 3000,
-    historyApiFallback: true,
+    historyApiFallback: true, // For React Router fallback
     hot: true,
   },
 };

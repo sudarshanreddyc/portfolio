@@ -6,6 +6,7 @@
   "lint": "eslint \"src/**/*.{js,jsx}\"",
   "start": "npm run lint && webpack serve --mode development",
   "build": "webpack --mode production --output-path dist",
+  "predeploy":"npm run build",
   "deploy": "gh-pages -d dist",
   "test": "echo \"Error: no test specified\" && exit 1"
 },
