@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "start": "npm run lint && webpack serve --mode development",
-    "build": "webpack --mode production --output-path build",
-    "deploy": "gh-pages -d build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "homepage": "https://sudarshanreddyc.github.io/portfolio",
+  "lint": "eslint \"src/**/*.{js,jsx}\"",
+  "start": "npm run lint && webpack serve --mode development",
+  "build": "webpack --mode production --output-path dist",
+  "deploy": "gh-pages -d dist",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "homepage": "https://sudarshanreddyc.github.io/portfolio/",
   "keywords": [],
   "author": "",
   "license": "ISC",
