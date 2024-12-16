@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"), // Output folder
     filename: "bundle.js",
-    publicPath: "/portfolio/", // Important for GitHub Pages deployment
+    publicPath: process.env.REACT_APP_BASE_URL || "/", // Important for GitHub Pages deployment
   },
   module: {
     rules: [

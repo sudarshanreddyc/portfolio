@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <script>
-        // Redirect to index.html for non-existing routes (GitHub Pages fallback handling)
-        const redirect = () => {
-            const l = window.location;
-            if (l.pathname !== '/' && !l.pathname.endsWith('.html')) {
-                l.replace(`${l.origin}/`);
-            }
-        };
-        redirect();
-    </script>
 </head>
 <body>
+    <!-- React root element -->
     <div id="root"></div>
+
+    <!-- Include the bundled JS -->
+    <script src="bundle.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Home = ({ theme }) => {
   const titles = [
@@ -32,7 +33,7 @@ const Home = ({ theme }) => {
         theme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-gray-100 text-gray-900"
-      }`}
+      } -mt-16`} // Add negative top margin
     >
       <motion.div
         className={`text-center max-w-3xl shadow-2xl rounded-xl p-10 ${
@@ -70,28 +71,29 @@ const Home = ({ theme }) => {
           transition={{ delay: 1 }}
         >
           <a
-            href="https://www.linkedin.com"
+            href="https://linkedin.com/in/sudarshan68"
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-xl ${
+            className={`${
               theme === "dark"
-                ? "text-blue-400 hover:text-blue-600"
-                : "text-blue-500 hover:text-blue-700"
-            }`}
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://www.github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-xl ${
-              theme === "dark"
-                ? "text-gray-400 hover:text-gray-200"
+                ? "text-gray-200 hover:text-gray-200"
                 : "text-gray-800 hover:text-black"
             }`}
           >
-            GitHub
+            <FaLinkedin style={{ fontSize: "40px" }} />
+          </a>
+
+          <a
+            href="https://www.github.com/sudarshanreddyc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-xl ${
+              theme === "dark"
+                ? "text-gray-200 hover:text-gray-200"
+                : "text-gray-800 hover:text-black"
+            }`}
+          >
+            <FaGithub style={{ fontSize: "40px" }} />
           </a>
         </motion.div>
       </motion.div>
