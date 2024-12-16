@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -266,6 +266,10 @@ const App = () => {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
+
+  useEffect(() => {
+    document.title = "SR | Portfolio"; // Set the title dynamically
+  }, []);
 
   return (
     <ThemeContext.Provider value={theme}>

@@ -17,6 +17,7 @@ const Certifications = ({ theme }) => {
         {
           title: "All in One Python Development Suite",
           provider: "Simplilearn",
+          url: "https://drive.google.com/file/d/10z_c4V7KogzmPktiFfwd1Nq-d9y84Lvw/view?usp=drive_link",
         },
         {
           title: ".NET, JavaScript, SQL Certification",
