@@ -38,8 +38,6 @@ const NavBar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
           </Link>
         </div>
 
-        {/* Theme Toggle Button */}
-
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8 text-lg font-medium">
           <li>
@@ -104,7 +102,7 @@ const NavBar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
           </li>
           <li>
             <a
-              href="https://drive.google.com/file/d/1GMwNKBBb2AqdFAaLkrJ_4x5z9_ZqVi9S/view?usp=drive_link" // Replace with your actual OneDrive URL
+              href="https://drive.google.com/file/d/1GMwNKBBb2AqdFAaLkrJ_4x5z9_ZqVi9S/view?usp=sharing" // Replace with your actual OneDrive URL
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-all"
