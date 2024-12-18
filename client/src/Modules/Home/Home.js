@@ -33,7 +33,7 @@ const Home = ({ theme }) => {
         theme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-gray-100 text-gray-900"
-      } -mt-16`} // Add negative top margin
+      } -mt-16`}
     >
       <motion.div
         className={`text-center max-w-3xl shadow-2xl rounded-xl p-10 ${
@@ -98,6 +98,36 @@ const Home = ({ theme }) => {
           >
             <FaGithub style={{ fontSize: "40px" }} />
           </a>
+        </motion.div>
+
+        {/* Contact Information */}
+        <motion.div
+          className="mt-8 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+          <p className="text-lg font-medium mb-2">
+            Email:{" "}
+            <a
+              href="mailto:sudarshanreddy.c123@gmail.com"
+              className={`underline ${
+                theme === "dark" ? "text-gray-200" : "text-gray-800"
+              }`}
+            >
+              sudarshanreddy.c123@gmail.com
+            </a>
+          </p>
+          <p className="text-lg font-medium">
+            Phone:{" "}
+            <span
+              className={`${
+                theme === "dark" ? "text-gray-200" : "text-gray-800"
+              }`}
+            >
+              +1 (667) 445-7232
+            </span>
+          </p>
         </motion.div>
       </motion.div>
     </div>
