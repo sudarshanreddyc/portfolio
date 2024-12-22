@@ -102,7 +102,7 @@ const NavBar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
           </li>
           <li>
             <a
-              href="https://drive.google.com/file/d/1XequW_4aNLcjkHbOIJ2fFVx1ZT2LjciV/view?usp=sharing" // Replace with your actual OneDrive URL
+              href="https://drive.google.com/file/d/1XequW_4aNLcjkHbOIJ2fFVx1ZT2LjciV/view?usp=embed_facebook"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-all"
