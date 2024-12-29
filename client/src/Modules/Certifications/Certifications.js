@@ -31,7 +31,7 @@ const Certifications = ({ theme }) => {
         {
           title: "Complete ReactJs Certification",
           provider: "Udemy",
-          url: "https://shorturl.at/NhYSO",
+          url: "https://www.udemy.com/certificate/UC-b42d0ce1-5d65-4643-ad43-712f5555b957/",
         },
       ]);
       setIsDataLoaded(true);
