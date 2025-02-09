@@ -5,6 +5,25 @@ import { FaGithub } from "react-icons/fa";
 const projects = [
   {
     id: 1,
+    title: "House Price Prediction",
+    description: `• Developed a machine learning model to predict house prices using Python and Scikit-learn.
+      • Trained and tested the model on Melbourne housing data with features like BuildingArea and Price.
+      • Achieved high prediction accuracy by comparing Linear Regression and Decision Tree models.`,
+    skills: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Scikit-learn",
+      "Linear Regression",
+      "Decision Trees",
+      "Data Visualization",
+    ],
+    githubLink: "https://github.com/sudarshanreddyc/MachineLearnigWithPython",
+  },
+
+  {
+    id: 2,
     title: "Portfolio Website",
     description:
       "A responsive portfolio website showcasing personal projects, skills, and experiences.",
@@ -18,7 +37,7 @@ const projects = [
     githubLink: "https://github.com/sudarshanreddyc/portfolio/tree/main/client",
   },
   {
-    id: 2,
+    id: 3,
     title: "Bank Loan Default Prediction",
     description: `• Analyzed financial data for 100,000 borrowers using RStudio to conduct loan default analysis.
       • Achieved 96% accuracy in predicting loan defaulters by comparing Random Forest and Gradient Boosting models.`,

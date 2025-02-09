@@ -4,8 +4,8 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Home = ({ theme }) => {
   const titles = [
+    "AI/ML Enthusiast",
     "Full-Stack Developer",
-    "Backend Engineer",
     "Frontend Specialist",
     "Software Architect",
   ];
@@ -62,10 +62,13 @@ const Home = ({ theme }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          Full-stack developer with 5 years of experience creating robust web
-          applications. Skilled in .NET Core, JavaScript, SQL, and React.
-          Proficient in data structures and algorithms, and currently enhancing
-          skills in Python, AI, and ML.
+          Machine Learning Developer with 4 years of experience building
+          data-driven solutions and web applications. Proficient in Python,
+          Scikit-learn, TensorFlow, and Pandas for developing robust machine
+          learning models. Skilled in data structures, algorithms, and feature
+          engineering, with a strong foundation in AI and ML. Experienced in
+          full-stack development using .NET Core, JavaScript, SQL, and React.
+          Passionate about leveraging ML to solve complex real-world problems.
         </motion.p>
         <motion.div
           className="mt-8 flex space-x-6 justify-center"
@@ -73,31 +76,51 @@ const Home = ({ theme }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <a
-            href="https://linkedin.com/in/sudarshan68"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${
-              theme === "dark"
-                ? "text-gray-200 hover:text-gray-200"
-                : "text-gray-800 hover:text-black"
-            }`}
-          >
-            <FaLinkedin style={{ fontSize: "40px" }} />
-          </a>
+          {/* LinkedIn */}
+          <div className="flex items-center space-x-2">
+            <span
+              className={`text-xl ${
+                theme === "dark" ? "text-gray-200" : "text-gray-800"
+              }`}
+            >
+              LinkedIn:
+            </span>
+            <a
+              href="https://linkedin.com/in/sudarshan68"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${
+                theme === "dark"
+                  ? "text-gray-200 hover:text-gray-200"
+                  : "text-gray-800 hover:text-black"
+              }`}
+            >
+              <FaLinkedin style={{ fontSize: "40px" }} />
+            </a>
+          </div>
 
-          <a
-            href="https://www.github.com/sudarshanreddyc"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-xl ${
-              theme === "dark"
-                ? "text-gray-200 hover:text-gray-200"
-                : "text-gray-800 hover:text-black"
-            }`}
-          >
-            <FaGithub style={{ fontSize: "40px" }} />
-          </a>
+          {/* GitHub */}
+          <div className="flex items-center space-x-2">
+            <span
+              className={`text-xl ${
+                theme === "dark" ? "text-gray-200" : "text-gray-800"
+              }`}
+            >
+              GitHub:
+            </span>
+            <a
+              href="https://www.github.com/sudarshanreddyc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${
+                theme === "dark"
+                  ? "text-gray-200 hover:text-gray-200"
+                  : "text-gray-800 hover:text-black"
+              }`}
+            >
+              <FaGithub style={{ fontSize: "40px" }} />
+            </a>
+          </div>
         </motion.div>
 
         {/* Contact Information */}

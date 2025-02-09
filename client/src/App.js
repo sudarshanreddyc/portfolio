@@ -54,6 +54,18 @@ const NavBar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
           </li>
           <li>
             <Link
+              to="/projects"
+              className={`${
+                isActive("/projects")
+                  ? "text-blue-400 underline"
+                  : "hover:text-gray-300"
+              }`}
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/certifications"
               className={`${
                 isActive("/certifications")
@@ -88,18 +100,7 @@ const NavBar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
               Skills
             </Link>
           </li>
-          <li>
-            <Link
-              to="/projects"
-              className={`${
-                isActive("/projects")
-                  ? "text-blue-400 underline"
-                  : "hover:text-gray-300"
-              }`}
-            >
-              Projects
-            </Link>
-          </li>
+
           <li>
             <a
               href="https://drive.google.com/file/d/1XequW_4aNLcjkHbOIJ2fFVx1ZT2LjciV/view?usp=embed_facebook"
