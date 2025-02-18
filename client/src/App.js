@@ -260,7 +260,7 @@ const NavBar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));

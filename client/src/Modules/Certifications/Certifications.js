@@ -1,37 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+// 1. Import images directly
+import GFGLogo from "../../assets/GFG.jpg";
+import SimplilearnLogo from "../../assets/Simplilearn.png";
+import OdessaLogo from "../../assets/Odessa.png";
+import UdemyLogo from "../../assets/Udemy.png";
+
 const Certifications = ({ theme }) => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [certifications, setCertifications] = useState([]);
 
   useEffect(() => {
-    // Simulating an API call to fetch certification data
+    // Simulating an API call / or local data fetch
     setTimeout(() => {
       setCertifications([
         {
           title: "Data Structures and Algorithms",
           provider: "GeeksForGeeks",
           url: "https://shorturl.at/Ot1VR",
+          logo: GFGLogo, // referencing imported image
         },
         {
           title: "All in One Python Development Suite",
           provider: "Simplilearn",
           url: "https://drive.google.com/file/d/10z_c4V7KogzmPktiFfwd1Nq-d9y84Lvw/view?usp=embed_facebook",
+          logo: SimplilearnLogo,
         },
         {
           title: ".NET, JavaScript, SQL Certification",
           provider: "Odessa Technologies",
+          logo: OdessaLogo,
         },
         {
           title: "Javascript Certification",
           provider: "Udemy",
           url: "https://shorturl.at/NhYSO",
+          logo: UdemyLogo,
         },
         {
           title: "Complete ReactJs Certification",
           provider: "Udemy",
           url: "https://www.udemy.com/certificate/UC-b42d0ce1-5d65-4643-ad43-712f5555b957/",
+          logo: UdemyLogo,
         },
       ]);
       setIsDataLoaded(true);
@@ -79,6 +90,15 @@ const Certifications = ({ theme }) => {
                 : "bg-white border border-gray-200"
             }`}
           >
+            {/* 2. Render the imported logo */}
+            {cert.logo && (
+              <img
+                src={cert.logo}
+                alt={`${cert.provider} logo`}
+                className="w-12 h-12 object-contain mb-2"
+              />
+            )}
+
             <h2
               className={`text-xl font-semibold mb-2 ${
                 theme === "dark" ? "text-blue-300" : "text-indigo-600"

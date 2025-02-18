@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const Home = ({ theme }) => {
   const titles = [
@@ -125,13 +125,13 @@ const Home = ({ theme }) => {
 
         {/* Contact Information */}
         <motion.div
-          className="mt-8 text-center"
+          className="mt-8 flex flex-col items-center text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
         >
-          <p className="text-lg font-medium mb-2">
-            Email:{" "}
+          <p className="text-lg font-medium mb-2 flex items-center justify-center">
+            <FaEnvelope className="mr-2" />
             <a
               href="mailto:sudarshanreddy.c123@gmail.com"
               className={`underline ${
@@ -141,8 +141,9 @@ const Home = ({ theme }) => {
               sudarshanreddy.c123@gmail.com
             </a>
           </p>
-          <p className="text-lg font-medium">
-            Phone:{" "}
+
+          <p className="text-lg font-medium flex items-center justify-center">
+            <FaPhone className="mr-2" />
             <span
               className={`${
                 theme === "dark" ? "text-gray-200" : "text-gray-800"

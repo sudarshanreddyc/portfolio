@@ -87,7 +87,11 @@ const Experience = ({ theme }) => {
               </div>
 
               <div className="text-xs md:text-sm mb-2 flex items-center space-x-2">
-                <FaBuilding />
+                <img
+                  src={experience.logo}
+                  alt={experience.company}
+                  className="w-12 h-12 object-contain rounded-md shadow-md"
+                />
                 <span>
                   <strong>Company:</strong> {experience.company}
                 </span>
