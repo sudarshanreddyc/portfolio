@@ -12,8 +12,8 @@ const Certifications = ({ theme }) => {
         {
           title: "Data Structures and Algorithms",
           provider: "GeeksForGeeks",
-          url: process.env.PUBLIC_URL + "https://shorturl.at/Ot1VR",
-          logo: "/assets/GFG.jpg",
+          url: "https://shorturl.at/Ot1VR",
+          logo: process.env.PUBLIC_URL + "/assets/GFG.jpg",
         },
         {
           title: "All in One Python Development Suite",

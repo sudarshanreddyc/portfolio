@@ -46,7 +46,7 @@ export class Experience_BusinessLogic {
           id: 3,
           jobTitle: "Software Engineer",
           company: "Odessa Technologies",
-          logo: "/assets/odessa.png",
+          logo: process.env.PUBLIC_URL + "/assets/odessa.png",
           responsibilities: `
             • Contributed to the development of LeaseWave, a global lease management system, by optimizing backend processes with .NET Core, C#, React, and Dapper, improved SQL query efficiency to reduce database response times by 15%, streamlined CI/CD pipelines using Azure DevOps, and practiced TDD with NUnit and Jest, enhancing code quality and reducing bugs by 25%.
           `,
@@ -57,7 +57,7 @@ export class Experience_BusinessLogic {
           id: 4,
           jobTitle: "Software Engineer Intern",
           company: "Odessa Technologies",
-          logo: "/assets/odessa.png",
+          logo: process.env.PUBLIC_URL + "/assets/odessa.png",
           responsibilities: `
             • Optimized backend processes for LeaseWave, a global lease management system, using .NET Core, C#, React, and Dapper, enhancing performance and scalability; improved SQL query efficiency, reducing database response times by 15%, and streamlined CI/CD pipelines with Azure DevOps, boosting team productivity and deployment reliability.
           `,
