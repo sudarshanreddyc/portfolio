@@ -1,7 +1,5 @@
 import { fetchData } from "../../Services/portfolioservice";
 import { hideLoader, showLoader } from "../../Redux/loader";
-import TrineLogo from "../../assets/trine.jpg";
-import LPULogo from "../../assets/lpu.png";
 
 export class Academics_BusinessLogic {
   // Handle form input changes
@@ -31,7 +29,7 @@ export class Academics_BusinessLogic {
           location: "Detroit, MI, United States",
           fromDate: "2024-08-01",
           toDate: "2024-08-01",
-          logo: TrineLogo,
+          logo: "/assets/trine.jpg",
         },
         {
           id: 2,
@@ -41,7 +39,7 @@ export class Academics_BusinessLogic {
           location: "Punjab, India",
           fromDate: "2016-07-01",
           toDate: "2020-06-01",
-          logo: LPULogo,
+          logo: "/assets/lpu.png",
         },
         {
           id: 3,

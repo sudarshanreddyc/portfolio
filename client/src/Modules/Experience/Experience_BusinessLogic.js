@@ -1,8 +1,5 @@
 import { fetchData } from "../../Services/portfolioservice";
 import { hideLoader, showLoader } from "../../Redux/loader";
-import ArcadixImg from "../../assets/Arcadix.jpg";
-import OdessaImg from "../../assets/Odessa.png";
-import InsightsoftwareImg from "../../assets/Insightsoftware.png";
 
 export class Experience_BusinessLogic {
   // Handle form input changes
@@ -27,7 +24,7 @@ export class Experience_BusinessLogic {
           id: 1,
           jobTitle: "Software Engineer",
           company: "Insightsoftware",
-          logo: InsightsoftwareImg,
+          logo: process.env.PUBLIC_URL + "/assets/insightsoftware.png",
           responsibilities: `
             • Migrated an analytical tool from Knockout.js to React with .NET and SQL backend, improving performance by 25% and maintainability, implemented encoding/decoding in .NET to secure sensitive data, and optimized CI/CD pipelines with Azure DevOps, reducing deployment times by 30%.
           `,
@@ -38,7 +35,7 @@ export class Experience_BusinessLogic {
           id: 2,
           jobTitle: "Software Engineer",
           company: "Arcadix Infotech Pvt Ltd",
-          logo: ArcadixImg,
+          logo: process.env.PUBLIC_URL + "/assets/Arcadix.jpg",
           responsibilities: `
             • Proposed and led the migration from Angular.js to React for the School Management System, improving performance by 30% and reducing technical debt, integrated SignalR for real-time updates of students' marks, and developed scalable .NET and SQL Server web APIs with microservice architecture, integrating Elasticsearch to improve search performance by 40% and system reliability.
           `,
@@ -49,7 +46,7 @@ export class Experience_BusinessLogic {
           id: 3,
           jobTitle: "Software Engineer",
           company: "Odessa Technologies",
-          logo: OdessaImg,
+          logo: "/assets/odessa.png",
           responsibilities: `
             • Contributed to the development of LeaseWave, a global lease management system, by optimizing backend processes with .NET Core, C#, React, and Dapper, improved SQL query efficiency to reduce database response times by 15%, streamlined CI/CD pipelines using Azure DevOps, and practiced TDD with NUnit and Jest, enhancing code quality and reducing bugs by 25%.
           `,
@@ -60,7 +57,7 @@ export class Experience_BusinessLogic {
           id: 4,
           jobTitle: "Software Engineer Intern",
           company: "Odessa Technologies",
-          logo: OdessaImg,
+          logo: "/assets/odessa.png",
           responsibilities: `
             • Optimized backend processes for LeaseWave, a global lease management system, using .NET Core, C#, React, and Dapper, enhancing performance and scalability; improved SQL query efficiency, reducing database response times by 15%, and streamlined CI/CD pipelines with Azure DevOps, boosting team productivity and deployment reliability.
           `,

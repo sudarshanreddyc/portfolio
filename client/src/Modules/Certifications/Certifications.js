@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// 1. Import images directly
-import GFGLogo from "../../assets/GFG.jpg";
-import SimplilearnLogo from "../../assets/Simplilearn.png";
-import OdessaLogo from "../../assets/Odessa.png";
-import UdemyLogo from "../../assets/Udemy.png";
-
 const Certifications = ({ theme }) => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [certifications, setCertifications] = useState([]);
@@ -19,30 +13,30 @@ const Certifications = ({ theme }) => {
           title: "Data Structures and Algorithms",
           provider: "GeeksForGeeks",
           url: "https://shorturl.at/Ot1VR",
-          logo: GFGLogo, // referencing imported image
+          logo: "/assets/GFG.jpg",
         },
         {
           title: "All in One Python Development Suite",
           provider: "Simplilearn",
           url: "https://drive.google.com/file/d/10z_c4V7KogzmPktiFfwd1Nq-d9y84Lvw/view?usp=embed_facebook",
-          logo: SimplilearnLogo,
+          logo: "/assets/Simplilearn.png",
         },
         {
           title: ".NET, JavaScript, SQL Certification",
           provider: "Odessa Technologies",
-          logo: OdessaLogo,
+          logo: "/assets/Odessa.png",
         },
         {
           title: "Javascript Certification",
           provider: "Udemy",
           url: "https://shorturl.at/NhYSO",
-          logo: UdemyLogo,
+          logo: "/assets/Udemy.png",
         },
         {
           title: "Complete ReactJs Certification",
           provider: "Udemy",
           url: "https://www.udemy.com/certificate/UC-b42d0ce1-5d65-4643-ad43-712f5555b957/",
-          logo: UdemyLogo,
+          logo: "/assets/Udemy.png",
         },
       ]);
       setIsDataLoaded(true);

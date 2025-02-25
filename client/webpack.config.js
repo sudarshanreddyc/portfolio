@@ -1,15 +1,22 @@
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { SourceMapDevToolPlugin } = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const PUBLIC_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://sudarshanreddyc.github.io/portfolio"
+    : "http://localhost:3000"; // ✅ Define PUBLIC_URL for both local and production
 
 module.exports = {
   mode: "production",
-  devtool: false, // Disable default source maps
+  devtool: false,
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"), // Output folder
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: process.env.REACT_APP_BASE_URL || "/", // Important for GitHub Pages deployment
+    publicPath: "/portfolio/", // ✅ Use your GitHub Pages repo name here
   },
   module: {
     rules: [
@@ -19,20 +26,16 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            sourceMaps: true, // Generate source maps via Babel
+            sourceMaps: true,
           },
         },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[path][name].[ext]",
-            },
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext]",
+        },
       },
       {
         test: /\.css$/,
@@ -42,10 +45,16 @@ module.exports = {
   },
   plugins: [
     new SourceMapDevToolPlugin({
-      filename: "[file].map", // Generate source maps for all files
+      filename: "[file].map",
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html", // Reference to index.html
+      template: "./public/index.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public/assets", to: "assets" }],
+    }),
+    new webpack.DefinePlugin({
+      "process.env.PUBLIC_URL": JSON.stringify(PUBLIC_URL), // ✅ Define process.env.PUBLIC_URL globally
     }),
   ],
   resolve: {
@@ -56,7 +65,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: 3000,
-    historyApiFallback: true, // For React Router fallback
+    historyApiFallback: true,
     hot: true,
   },
 };
