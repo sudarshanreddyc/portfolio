@@ -12,31 +12,31 @@ const Certifications = ({ theme }) => {
         {
           title: "Data Structures and Algorithms",
           provider: "GeeksForGeeks",
-          url: "https://shorturl.at/Ot1VR",
+          url: process.env.PUBLIC_URL + "https://shorturl.at/Ot1VR",
           logo: "/assets/GFG.jpg",
         },
         {
           title: "All in One Python Development Suite",
           provider: "Simplilearn",
           url: "https://drive.google.com/file/d/10z_c4V7KogzmPktiFfwd1Nq-d9y84Lvw/view?usp=embed_facebook",
-          logo: "/assets/Simplilearn.png",
+          logo: process.env.PUBLIC_URL + "/assets/Simplilearn.png",
         },
         {
           title: ".NET, JavaScript, SQL Certification",
           provider: "Odessa Technologies",
-          logo: "/assets/Odessa.png",
+          logo: process.env.PUBLIC_URL + "/assets/Odessa.png",
         },
         {
           title: "Javascript Certification",
           provider: "Udemy",
           url: "https://shorturl.at/NhYSO",
-          logo: "/assets/Udemy.png",
+          logo: process.env.PUBLIC_URL + "/assets/Udemy.png",
         },
         {
           title: "Complete ReactJs Certification",
           provider: "Udemy",
           url: "https://www.udemy.com/certificate/UC-b42d0ce1-5d65-4643-ad43-712f5555b957/",
-          logo: "/assets/Udemy.png",
+          logo: process.env.PUBLIC_URL + "/assets/Udemy.png",
         },
       ]);
       setIsDataLoaded(true);
