@@ -29,7 +29,7 @@ export class Academics_BusinessLogic {
           location: "Detroit, MI, United States",
           fromDate: "2024-08-01",
           toDate: "2024-08-01",
-          logo: process.env.PUBLIC_URL + "/assets/trine.jpg",
+          logo: process.env.PUBLIC_URL + "/assets/Trine.jpg",
         },
         {
           id: 2,
@@ -39,7 +39,7 @@ export class Academics_BusinessLogic {
           location: "Punjab, India",
           fromDate: "2016-07-01",
           toDate: "2020-06-01",
-          logo: process.env.PUBLIC_URL + "/assets/lpu.png",
+          logo: process.env.PUBLIC_URL + "/assets/Lpu.png",
         },
         {
           id: 3,
