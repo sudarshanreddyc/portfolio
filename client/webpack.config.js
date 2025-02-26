@@ -4,10 +4,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { SourceMapDevToolPlugin } = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const PUBLIC_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://sudarshanreddyc.github.io/portfolio"
-    : "http://localhost:3000"; // ✅ Define PUBLIC_URL for both local and production
+const PUBLIC_URL = "https://sudarshanreddyc.github.io/portfolio";
+// process.env.NODE_ENV === "production"
+//   ? "https://sudarshanreddyc.github.io/portfolio"
+//   : "http://localhost:3000"; // ✅ Define PUBLIC_URL for both local and production
+
+console.log("Node env" + process.env.NODE_ENV);
 
 module.exports = {
   mode: "production",
