@@ -53,7 +53,7 @@ module.exports = {
       template: "./public/index.html",
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: "public/assets", to: "assets" }],
+      patterns: [{ from: "public/assets", to: "dist/assets" }],
     }),
     new webpack.DefinePlugin({
       "process.env.PUBLIC_URL": JSON.stringify(PUBLIC_URL), // ✅ Define process.env.PUBLIC_URL globally
