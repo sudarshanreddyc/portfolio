@@ -67,7 +67,8 @@ const Home = ({ theme }) => {
           Scikit-learn, TensorFlow, and Pandas for developing robust machine
           learning models. Skilled in data structures, algorithms, and feature
           engineering, with a strong foundation in AI and ML. Experienced in
-          full-stack development using .NET Core, JavaScript, SQL, and React.
+          full-stack development. Skilled in designing microservices,
+          implementing design patterns, and developing scalable applications.
           Passionate about leveraging ML to solve complex real-world problems.
         </motion.p>
         <motion.div
