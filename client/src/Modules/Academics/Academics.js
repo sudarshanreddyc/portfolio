@@ -36,7 +36,7 @@ const Academics = ({ theme }) => {
 
   return (
     <div
-      className={`min-h-screen p-8 flex flex-col items-center ${
+      className={`p-8 flex flex-col items-center ${
         theme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-gray-100 text-gray-900"

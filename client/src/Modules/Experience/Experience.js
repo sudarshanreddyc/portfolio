@@ -40,9 +40,17 @@ const Experience = ({ theme }) => {
           : "bg-gray-100 text-gray-900"
       } md:items-center sm:pl-4 md:pl-0`} // Add left padding for small devices
     >
+      <motion.h1
+        className="text-4xl font-bold mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        Experience
+      </motion.h1>
       {/* Vertical Line */}
       <div
-        className={`absolute top-0 bottom-0 w-1 ${
+        className={`absolute top-20 bottom-0 w-1 ${
           theme === "dark" ? "bg-gray-600" : "bg-gray-300"
         } -translate-x-1/2`}
       ></div>

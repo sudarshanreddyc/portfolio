@@ -1,106 +1,142 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
-import * as Skills_Hook from "./Skills_Hook";
-import * as Skills_BusinessLogic from "./Skills_BusinessLogic";
+import {
+  FaPython,
+  FaJava,
+  FaReact,
+  FaGitAlt,
+  FaDocker,
+  FaVisualStudio,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaCode,
+  FaCloud,
+  FaTools,
+} from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiTypescript,
+  SiTailwindcss,
+  SiDotnet,
+  SiTensorflow,
+  SiPytorch,
+  SiKeras,
+  SiNumpy,
+  SiPandas,
+  SiScikitlearn,
+} from "react-icons/si";
+
+const categorizedSkills = [
+  {
+    title: "Languages",
+    skills: [
+      { icon: <FaCode className="text-gray-700" />, name: "C#" },
+      { icon: <FaJava className="text-[#007396]" />, name: "Java" },
+      { icon: <SiCplusplus className="text-[#00599C]" />, name: "C++" },
+      { icon: <FaPython className="text-[#306998]" />, name: "Python" },
+      { icon: <FaJsSquare className="text-[#F7DF1E]" />, name: "JavaScript" },
+      { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" },
+    ],
+  },
+  {
+    title: "Machine Learning",
+    skills: [
+      {
+        icon: <SiScikitlearn className="text-[#F7931E]" />,
+        name: "Scikit-learn",
+      },
+      { icon: <SiTensorflow className="text-[#FF6F00]" />, name: "TensorFlow" },
+      { icon: <SiPytorch className="text-[#EE4C2C]" />, name: "PyTorch" },
+      { icon: <SiKeras className="text-[#D00000]" />, name: "Keras" },
+      { icon: <SiPandas className="text-[#150458]" />, name: "Pandas" },
+      { icon: <SiNumpy className="text-[#013243]" />, name: "NumPy" },
+    ],
+  },
+  {
+    title: "Frameworks",
+    skills: [
+      { icon: <FaReact className="text-[#61DAFB]" />, name: "React" },
+      { icon: <SiDotnet className="text-[#512BD4]" />, name: ".NET Core" },
+      {
+        icon: <SiTailwindcss className="text-[#38B2AC]" />,
+        name: "Tailwind CSS",
+      },
+    ],
+  },
+  {
+    title: "Cloud / DevOps",
+    skills: [
+      { icon: <FaDocker className="text-[#0db7ed]" />, name: "Docker" },
+      { icon: <FaCloud className="text-[#6875F5]" />, name: "Azure DevOps" },
+    ],
+  },
+  {
+    title: "Developer Tools",
+    skills: [
+      { icon: <FaGitAlt className="text-[#F1502F]" />, name: "Git" },
+      { icon: <FaCode className="text-[#007ACC]" />, name: "VS Code" },
+      { icon: <FaTools className="text-gray-600" />, name: "Visual Studio" },
+    ],
+  },
+];
 
 const Skills = ({ theme }) => {
-  const [state, dispatch] = useReducer(
-    Skills_Hook.skillsReducer,
-    Skills_Hook.initialState
-  );
-
-  const reduxDispatch = useDispatch();
-
-  const objContext = {
-    state,
-    dispatch,
-    reduxDispatch,
-    Skills_BusinessLogic: new Skills_BusinessLogic.Skills_BusinessLogic(),
-  };
-
-  // Fetch skills data directly
-  Skills_Hook.useFetchSkills(objContext);
-
-  // Group skills by category
-  const groupedSkills = state.skills.reduce((acc, skill) => {
-    if (!acc[skill.category]) {
-      acc[skill.category] = [];
-    }
-    acc[skill.category].push(skill);
-    return acc;
-  }, {});
-
-  // Animation variants for cards
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, delay: i * 0.2 },
-    }),
-  };
-
   return (
-    <div
-      className={`min-h-screen p-8 flex flex-col items-center ${
+    <section
+      id="skills"
+      className={`py-12 px-6 flex flex-col items-center ${
         theme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-gray-100 text-gray-900"
       }`}
     >
-      {/* Page Heading */}
       <h1
-        className={`text-4xl font-extrabold mb-8 text-center ${
+        className={`text-4xl font-extrabold mb-10 text-center ${
           theme === "dark" ? "text-blue-400" : "text-indigo-700"
         }`}
       >
         My Skills
       </h1>
 
-      {/* Skills Grid */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl"
-        initial="hidden"
-        animate="visible"
-      >
-        {Object.entries(groupedSkills).map(([category, skills], index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            variants={cardVariants}
-            className={`p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 ${
-              theme === "dark"
-                ? "bg-gray-800 border border-gray-700"
-                : "bg-white border border-gray-200"
+      {categorizedSkills.map((category, idx) => (
+        <div key={idx} className="mb-12 w-full max-w-6xl">
+          <h2
+            className={`text-2xl font-semibold mb-6 ${
+              theme === "dark" ? "text-blue-300" : "text-indigo-600"
             }`}
           >
-            {/* Category Title */}
-            <h2
-              className={`text-2xl font-semibold mb-4 text-center ${
-                theme === "dark" ? "text-blue-300" : "text-indigo-600"
-              }`}
-            >
-              {category}
-            </h2>
-
-            {/* Skills List */}
-            <ul>
-              {skills.map((skill, idx) => (
-                <li
-                  key={idx}
-                  className={`flex justify-between items-center py-2 border-b last:border-b-0 ${
-                    theme === "dark" ? "border-gray-700" : "border-gray-300"
-                  }`}
-                >
-                  <span className="text-lg font-medium">{skill.skill}</span>
-                </li>
-              ))}
-            </ul>
+            {category.title}
+          </h2>
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: {
+                transition: { staggerChildren: 0.1 },
+              },
+            }}
+          >
+            {category.skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                className={`flex flex-col items-center justify-center p-4 rounded-xl shadow-md hover:scale-105 transition-transform duration-300 ${
+                  theme === "dark" ? "bg-gray-800" : "bg-white"
+                }`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-4xl mb-2">{skill.icon}</div>
+                <p className="text-lg font-medium">{skill.name}</p>
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
-    </div>
+        </div>
+      ))}
+    </section>
   );
 };
 

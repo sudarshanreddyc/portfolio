@@ -5,6 +5,20 @@ import { FaGithub } from "react-icons/fa";
 const projects = [
   {
     id: 1,
+    title: "Real-Time Chat Application Using Socket.IO",
+    description: `• Built a real-time chat application using React, Node.js, and Socket.IO, leveraging the WebSocket protocol for efficient, bidirectional communication and dynamic room-based messaging.
+    • Achieved 99% message delivery accuracy and maintained latency under 100ms during concurrent browser testing.`,
+    skills: [
+      "React",
+      "Node.js",
+      "Socket.IO",
+      "WebSockets",
+      "Real-Time Communication",
+    ],
+    githubLink: "https://github.com/sudarshanreddyc/RealTimeChatApp",
+  },
+  {
+    id: 2,
     title: "House Price Prediction",
     description: `• Developed a machine learning model to predict house prices using Python and Scikit-learn.
       • Trained and tested the model on Melbourne housing data with features like BuildingArea and Price.
@@ -21,9 +35,8 @@ const projects = [
     ],
     githubLink: "https://github.com/sudarshanreddyc/MachineLearnigWithPython",
   },
-
   {
-    id: 2,
+    id: 3,
     title: "Portfolio Website",
     description:
       "A responsive portfolio website showcasing personal projects, skills, and experiences.",
@@ -37,7 +50,7 @@ const projects = [
     githubLink: "https://github.com/sudarshanreddyc/portfolio/tree/main/client",
   },
   {
-    id: 3,
+    id: 4,
     title: "Bank Loan Default Prediction",
     description: `• Analyzed financial data for 100,000 borrowers using RStudio to conduct loan default analysis.
       • Achieved 96% accuracy in predicting loan defaulters by comparing Random Forest and Gradient Boosting models.`,
@@ -56,7 +69,7 @@ const projects = [
 const Projects = ({ theme }) => {
   return (
     <div
-      className={`min-h-screen p-8 flex flex-col items-center ${
+      className={`p-8 flex flex-col items-center ${
         theme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-gray-100 text-gray-900"

@@ -6,9 +6,22 @@ const Certifications = ({ theme }) => {
   const [certifications, setCertifications] = useState([]);
 
   useEffect(() => {
-    // Simulating an API call / or local data fetch
     setTimeout(() => {
       setCertifications([
+        {
+          title: "Best Team - Odessa Hackathon",
+          provider: "GitHub",
+          url: "https://github.com/sudarshanreddyc/ai-requirement-extractor",
+          //logo: process.env.PUBLIC_URL + "/assets/github-mark.png",
+          description:
+            "Built an LLM-powered AI Requirement Extractor using React.js and Hugging Face Mistral-7B. Improved efficiency by 70%, reduced API latency by 40%, and token usage by 30%.",
+        },
+        {
+          title: "Problem Solving (Intermediate)",
+          provider: "Hackerrank",
+          url: "https://www.hackerrank.com/certificates/2723d700e997",
+          logo: process.env.PUBLIC_URL + "/assets/Hackerrank.png",
+        },
         {
           title: "Data Structures and Algorithms",
           provider: "GeeksForGeeks",
@@ -43,7 +56,6 @@ const Certifications = ({ theme }) => {
     }, 500);
   }, []);
 
-  // Framer-motion animation variants
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
@@ -55,7 +67,7 @@ const Certifications = ({ theme }) => {
 
   return (
     <div
-      className={`min-h-screen p-8 flex flex-col items-center ${
+      className={`p-8 flex flex-col items-center ${
         theme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-gray-100 text-gray-900"
@@ -66,7 +78,7 @@ const Certifications = ({ theme }) => {
           theme === "dark" ? "text-blue-400" : "text-indigo-700"
         }`}
       >
-        Certifications
+        Certifications & Achievements
       </h1>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl"
@@ -84,7 +96,6 @@ const Certifications = ({ theme }) => {
                 : "bg-white border border-gray-200"
             }`}
           >
-            {/* 2. Render the imported logo */}
             {cert.logo && (
               <img
                 src={cert.logo}
@@ -92,7 +103,6 @@ const Certifications = ({ theme }) => {
                 className="w-12 h-12 object-contain mb-2"
               />
             )}
-
             <h2
               className={`text-xl font-semibold mb-2 ${
                 theme === "dark" ? "text-blue-300" : "text-indigo-600"
@@ -100,7 +110,12 @@ const Certifications = ({ theme }) => {
             >
               {cert.title}
             </h2>
-            <p className="text-sm mb-4">{cert.provider}</p>
+            {cert.provider != "GitHub" && (
+              <p className="text-sm mb-2 font-medium">{cert.provider}</p>
+            )}
+            {cert.description && (
+              <p className="text-sm mb-2 leading-snug">{cert.description}</p>
+            )}
             {cert.url && (
               <a
                 href={cert.url}
@@ -112,7 +127,7 @@ const Certifications = ({ theme }) => {
                     : "text-blue-600 hover:text-blue-800"
                 }`}
               >
-                View Certification
+                {cert.provider === "GitHub" ? "GitHub" : "View Certification"}
               </a>
             )}
           </motion.div>
