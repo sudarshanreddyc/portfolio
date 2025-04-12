@@ -28,7 +28,7 @@ export class Academics_BusinessLogic {
           level: "Graduate",
           location: "Detroit, MI, United States",
           fromDate: "2024-08-01",
-          toDate: "2024-08-01",
+          toDate: "Present",
           logo: process.env.PUBLIC_URL + "/assets/Trine.jpg",
         },
         {
@@ -41,16 +41,16 @@ export class Academics_BusinessLogic {
           toDate: "2020-06-01",
           logo: process.env.PUBLIC_URL + "/assets/Lpu.png",
         },
-        {
-          id: 3,
-          school: "Sri Sai Jr College",
-          percentage: 97.5,
-          level: "Intermediate",
-          location: "Anantapur, Andhrapradesh, India",
-          fromDate: "2014-06-01",
-          toDate: "2016-03-25",
-          //logo: "/LC.jpg", // Add college logo path
-        },
+        // {
+        //   id: 3,
+        //   school: "Sri Sai Jr College",
+        //   percentage: 97.5,
+        //   level: "Intermediate",
+        //   location: "Anantapur, Andhrapradesh, India",
+        //   fromDate: "2014-06-01",
+        //   toDate: "2016-03-25",
+        //   //logo: "/LC.jpg", // Add college logo path
+        // },
       ];
 
       objContext.dispatch({

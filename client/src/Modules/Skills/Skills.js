@@ -13,6 +13,8 @@ import {
   FaCode,
   FaCloud,
   FaTools,
+  FaDatabase,
+  FaNetworkWired,
 } from "react-icons/fa";
 import {
   SiCplusplus,
@@ -25,6 +27,7 @@ import {
   SiNumpy,
   SiPandas,
   SiScikitlearn,
+  SiRedis,
 } from "react-icons/si";
 
 const categorizedSkills = [
@@ -37,6 +40,10 @@ const categorizedSkills = [
       { icon: <FaPython className="text-[#306998]" />, name: "Python" },
       { icon: <FaJsSquare className="text-[#F7DF1E]" />, name: "JavaScript" },
       { icon: <SiTypescript className="text-[#3178C6]" />, name: "TypeScript" },
+      {
+        icon: <FaDatabase className="text-[#CC2927]" />,
+        name: "Microsoft SQL Server",
+      },
     ],
   },
   {
@@ -69,6 +76,16 @@ const categorizedSkills = [
     skills: [
       { icon: <FaDocker className="text-[#0db7ed]" />, name: "Docker" },
       { icon: <FaCloud className="text-[#6875F5]" />, name: "Azure DevOps" },
+    ],
+  },
+  {
+    title: "Systems & Storage",
+    skills: [
+      {
+        icon: <FaNetworkWired className="text-[#6B7280]" />,
+        name: "Distributed Systems",
+      },
+      { icon: <SiRedis className="text-[#DC382D]" />, name: "Caching (Redis)" },
     ],
   },
   {
