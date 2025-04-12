@@ -39,7 +39,7 @@ const Home = ({ theme }) => {
       }`}
     >
       <motion.div
-        className={`mb-10 py-10 text-center max-w-3xl shadow-2xl rounded-xl ${
+        className={`mb-10 py-10 w-full px-2 text-center max-w-3xl shadow-2xl rounded-xl ${
           theme === "dark" ? "bg-gray-800" : "bg-white"
         }`}
         initial={{ opacity: 0, y: 50 }}
@@ -73,7 +73,7 @@ const Home = ({ theme }) => {
         </motion.p>
 
         <motion.div
-          className="mt-8 flex space-x-6 justify-center"
+          className="mt-8 flex justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
