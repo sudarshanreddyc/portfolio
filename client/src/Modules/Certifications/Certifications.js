@@ -96,13 +96,13 @@ const Certifications = ({ theme }) => {
                 : "bg-white border border-gray-200"
             }`}
           >
-            {cert.logo && (
+            {/* {cert.logo && (
               <img
                 src={cert.logo}
                 alt={`${cert.provider} logo`}
                 className="w-12 h-12 object-contain mb-2"
               />
-            )}
+            )} */}
             <h2
               className={`text-xl font-semibold mb-2 ${
                 theme === "dark" ? "text-blue-300" : "text-indigo-600"

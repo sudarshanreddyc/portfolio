@@ -95,18 +95,19 @@ const Experience = ({ theme }) => {
               </div>
 
               <div className="text-xs md:text-sm mb-2 flex items-center space-x-2">
-                {/* <img
-                  src={experience.logo}
-                  alt={experience.company}
-                  className="w-12 h-12 object-contain rounded-md shadow-md"
-                /> */}
                 <span>
                   <strong>Company:</strong> {experience.company}
                 </span>
               </div>
-              <div className="text-xs md:text-sm">
-                <p>{experience.responsibilities}</p>
-              </div>
+
+              {/* Responsibilities List */}
+              <ul className="text-xs md:text-sm list-disc list-inside">
+                {experience.responsibilities.map((responsibility, i) => (
+                  <li key={i} className="mb-2">
+                    {responsibility}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Connector Dot */}

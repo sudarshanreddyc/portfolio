@@ -1,6 +1,46 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiSocketdotio,
+  SiJavascript,
+  SiTailwindcss,
+  SiFramer,
+  SiGithub,
+  SiPython,
+  SiPandas,
+  SiNumpy,
+  SiScikitlearn,
+  SiR,
+  SiDatabricks,
+} from "react-icons/si";
+
+const iconMap = {
+  React: <SiReact size={20} color="#61DBFB" />,
+  "Node.js": <SiNodedotjs size={20} color="#539E43" />,
+  "Socket.IO": <SiSocketdotio size={20} color="#010101" />,
+  WebSockets: <SiSocketdotio size={20} color="#010101" />,
+  "Real-Time Communication": <SiSocketdotio size={20} color="#010101" />,
+  JavaScript: <SiJavascript size={20} color="#F7DF1E" />,
+  "Tailwind CSS": <SiTailwindcss size={20} color="#38B2AC" />,
+  "Framer Motion": <SiFramer size={20} color="#0055FF" />,
+  "GitHub Pages": <SiGithub size={20} color="#181717" />,
+  Python: <SiPython size={20} color="#306998" />,
+  Pandas: <SiPandas size={20} color="#150458" />,
+  NumPy: <SiNumpy size={20} color="#013243" />,
+  Matplotlib: <SiDatabricks size={20} color="#E60000" />,
+  "Scikit-learn": <SiScikitlearn size={20} color="#F7931E" />,
+  "Linear Regression": <SiScikitlearn size={20} color="#F7931E" />,
+  "Decision Trees": <SiScikitlearn size={20} color="#F7931E" />,
+  "Data Visualization": <SiDatabricks size={20} color="#E60000" />,
+  R: <SiR size={20} color="#276DC3" />,
+  "R Studio": <SiR size={20} color="#276DC3" />,
+  "Data Mining": <SiDatabricks size={20} color="#E60000" />,
+  "Gradient Boosting": <SiScikitlearn size={20} color="#F7931E" />,
+  "Random Forest": <SiScikitlearn size={20} color="#F7931E" />,
+};
 
 const projects = [
   {
@@ -75,7 +115,6 @@ const Projects = ({ theme }) => {
           : "bg-gray-100 text-gray-900"
       }`}
     >
-      {/* Page Header */}
       <motion.h1
         className="text-4xl font-bold mb-8"
         initial={{ opacity: 0, y: -20 }}
@@ -85,7 +124,6 @@ const Projects = ({ theme }) => {
         Projects
       </motion.h1>
 
-      {/* Cards Container */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <motion.div
@@ -99,7 +137,6 @@ const Projects = ({ theme }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: project.id * 0.2 }}
           >
-            {/* Project Title */}
             <h2
               className={`text-2xl font-semibold mb-3 ${
                 theme === "dark" ? "text-blue-400" : "text-blue-600"
@@ -108,30 +145,23 @@ const Projects = ({ theme }) => {
               {project.title}
             </h2>
 
-            {/* Project Description */}
             <div className="text-sm mb-4 leading-relaxed">
               {project.description.split("\n").map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>
 
-            {/* Skills Used */}
-            <div className="flex flex-wrap mb-4">
+            <div className="flex flex-wrap gap-2 mb-4">
               {project.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className={`mr-2 mb-2 px-2 py-1 text-xs font-medium rounded ${
-                    theme === "dark"
-                      ? "bg-blue-700 text-white"
-                      : "bg-blue-100 text-blue-800"
-                  }`}
+                  className="flex items-center gap-1 px-2 py-1 text-xs font-medium rounded bg-gray-200 text-gray-800"
                 >
-                  {skill}
+                  {iconMap[skill] || null} {skill}
                 </span>
               ))}
             </div>
 
-            {/* GitHub Link */}
             <div className="flex items-center justify-end">
               <a
                 href={project.githubLink}
