@@ -5,6 +5,8 @@ const Certifications = ({ theme }) => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [certifications, setCertifications] = useState([]);
 
+  const PUBLIC_URL = process.env.PUBLIC_URL || "";
+
   useEffect(() => {
     setTimeout(() => {
       setCertifications([
@@ -12,7 +14,7 @@ const Certifications = ({ theme }) => {
           title: "Best Team - Odessa Hackathon",
           provider: "GitHub",
           url: "https://github.com/sudarshanreddyc/ai-requirement-extractor",
-          //logo: process.env.PUBLIC_URL + "/assets/github-mark.png",
+          logo: PUBLIC_URL + "/assets/Odessa.png",
           description:
             "Built an LLM-powered AI Requirement Extractor using React.js and Hugging Face Mistral-7B. Improved efficiency by 70%, reduced API latency by 40%, and token usage by 30%.",
         },
@@ -20,36 +22,36 @@ const Certifications = ({ theme }) => {
           title: "Problem Solving (Intermediate)",
           provider: "Hackerrank",
           url: "https://www.hackerrank.com/certificates/2723d700e997",
-          logo: process.env.PUBLIC_URL + "/assets/Hackerrank.png",
+          logo: PUBLIC_URL + "/assets/Hackerrank.png",
         },
         {
           title: "Data Structures and Algorithms",
           provider: "GeeksForGeeks",
           url: "https://shorturl.at/Ot1VR",
-          logo: process.env.PUBLIC_URL + "/assets/GFG.jpg",
+          logo: PUBLIC_URL + "/assets/GFG.jpg",
         },
         {
           title: "All in One Python Development Suite",
           provider: "Simplilearn",
           url: "https://drive.google.com/file/d/10z_c4V7KogzmPktiFfwd1Nq-d9y84Lvw/view?usp=embed_facebook",
-          logo: process.env.PUBLIC_URL + "/assets/Simplilearn.png",
+          logo: PUBLIC_URL + "/assets/Simplilearn.png",
         },
         {
           title: ".NET, JavaScript, SQL Certification",
           provider: "Odessa Technologies",
-          logo: process.env.PUBLIC_URL + "/assets/Odessa.png",
+          logo: PUBLIC_URL + "/assets/Odessa.png",
         },
         {
           title: "Javascript Certification",
           provider: "Udemy",
           url: "https://shorturl.at/NhYSO",
-          logo: process.env.PUBLIC_URL + "/assets/Udemy.png",
+          logo: PUBLIC_URL + "/assets/Udemy.png",
         },
         {
           title: "Complete ReactJs Certification",
           provider: "Udemy",
           url: "https://www.udemy.com/certificate/UC-b42d0ce1-5d65-4643-ad43-712f5555b957/",
-          logo: process.env.PUBLIC_URL + "/assets/Udemy.png",
+          logo: PUBLIC_URL + "/assets/Udemy.png",
         },
       ]);
       setIsDataLoaded(true);
@@ -96,13 +98,13 @@ const Certifications = ({ theme }) => {
                 : "bg-white border border-gray-200"
             }`}
           >
-            {/* {cert.logo && (
+            {cert.logo && (
               <img
                 src={cert.logo}
                 alt={`${cert.provider} logo`}
                 className="w-12 h-12 object-contain mb-2"
               />
-            )} */}
+            )}
             <h2
               className={`text-xl font-semibold mb-2 ${
                 theme === "dark" ? "text-blue-300" : "text-indigo-600"

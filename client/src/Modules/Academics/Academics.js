@@ -68,13 +68,13 @@ const Academics = ({ theme }) => {
                 : "bg-white border border-gray-200"
             }`}
           >
-            {/* {academic.logo && (
+            {academic.logo && (
               <img
                 src={academic.logo}
                 alt={academic.school}
                 className="w-16 h-16 mx-auto mb-4 object-contain"
               />
-            )} */}
+            )}
 
             <h2
               className={`text-xl font-semibold mb-2 ${

@@ -1,6 +1,8 @@
 import { fetchData } from "../../Services/portfolioservice";
 import { hideLoader, showLoader } from "../../Redux/loader";
 
+const PUBLIC_URL = process.env.PUBLIC_URL || "";
+
 export class Experience_BusinessLogic {
   // Handle form input changes
   handleInputChange(objContext, field, value) {
@@ -24,9 +26,9 @@ export class Experience_BusinessLogic {
           id: 0,
           jobTitle: "Software Development Intern",
           company: "Delta Dental of Michigan",
-          logo: process.env.PUBLIC_URL + "/assets/Deltadental.png",
+          logo: PUBLIC_URL + "/assets/Deltadental.png",
           responsibilities: [
-            "Developed microservices and UI for an insurance report generation dashboard using .NET and React, implementing a custom caching mechanism that reduced data retrieval time by 40% and improved dashboard load speed by 30%.",
+            "Developed microservices and UI for an insurance report generation dashboard using Java, Springboot and React, implementing a custom caching mechanism that reduced data retrieval time by 40% and improved dashboard load speed by 30%.",
           ],
           fromDate: "01/2024",
           toDate: "07/2024",
@@ -35,7 +37,7 @@ export class Experience_BusinessLogic {
           id: 1,
           jobTitle: "Senior Software Engineer",
           company: "Insightsoftware",
-          logo: process.env.PUBLIC_URL + "/assets/Insightsoftware.png",
+          logo: PUBLIC_URL + "/assets/Insightsoftware.png",
           responsibilities: [
             "Led UI migration of Angles for SAP, an analytical tool from Knockout.js to React, improving page load speed by 25% and contributing to client acquisition worth over $1M.",
             "Refactored microservices and automated CI/CD pipelines, reducing latency and cutting release cycles by 30%.",
@@ -48,7 +50,7 @@ export class Experience_BusinessLogic {
           id: 2,
           jobTitle: "Software Engineer",
           company: "Arcadix Infotech Pvt Ltd",
-          logo: process.env.PUBLIC_URL + "/assets/Arcadix.jpg",
+          logo: PUBLIC_URL + "/assets/Arcadix.jpg",
           responsibilities: [
             "Architected a Student Dashboard using React, Node.js, and SQL for real-time academic reporting.",
             "Designed and implemented a centralized logging and error-handling module, reducing debugging time by 40%.",
@@ -61,7 +63,7 @@ export class Experience_BusinessLogic {
           id: 3,
           jobTitle: "Software Engineer",
           company: "Odessa Technologies",
-          logo: process.env.PUBLIC_URL + "/assets/Odessa.png",
+          logo: PUBLIC_URL + "/assets/Odessa.png",
           responsibilities: [
             "Built reusable React components and RESTful APIs for LeaseWave, reducing code duplication by 30%.",
             "Optimized queries and indexing, improving execution speed by 30% and backend performance.",
