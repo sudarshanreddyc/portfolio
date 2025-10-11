@@ -65,7 +65,7 @@ const Home = ({ theme }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          Software Engineer with 4+ years of experience in developing scalable
+          Software Engineer with 5+ years of experience in developing scalable
           microservices, cloud solutions, and AI/ML models using Python. Skilled
           in system design, data structures, and algorithms, with expertise in
           building high-performance applications and collaborating with
