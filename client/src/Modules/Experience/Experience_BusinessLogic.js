@@ -21,6 +21,17 @@ export class Experience_BusinessLogic {
       // });
       const experiences = [
         {
+          id: 0,
+          jobTitle: "Software Development Intern",
+          company: "Delta Dental of Michigan",
+          logo: process.env.PUBLIC_URL + "/assets/Deltadental.png",
+          responsibilities: [
+            "Developed microservices and UI for an insurance report generation dashboard using .NET and React, implementing a custom caching mechanism that reduced data retrieval time by 40% and improved dashboard load speed by 30%.",
+          ],
+          fromDate: "01/2024",
+          toDate: "07/2024",
+        },
+        {
           id: 1,
           jobTitle: "Senior Software Engineer",
           company: "Insightsoftware",

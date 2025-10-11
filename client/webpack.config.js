@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { SourceMapDevToolPlugin } = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const PUBLIC_URL = "https://sudarshanreddyc.github.io/portfolio";
-// process.env.NODE_ENV === "production"
-//   ? "https://sudarshanreddyc.github.io/portfolio"
-//   : "http://localhost:3000"; // ✅ Define PUBLIC_URL for both local and production
+const PUBLIC_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://sudarshanreddyc.github.io/portfolio"
+    : "http://localhost:3000"; // ✅ Define PUBLIC_URL for both local and production
 
 console.log("Node env" + process.env.NODE_ENV);
 
@@ -53,7 +53,7 @@ module.exports = {
       template: "./public/index.html",
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: "public/assets", to: "dist/assets" }],
+      patterns: [{ from: "public/assets", to: "assets" }],
     }),
     new webpack.DefinePlugin({
       "process.env.PUBLIC_URL": JSON.stringify(PUBLIC_URL), // ✅ Define process.env.PUBLIC_URL globally

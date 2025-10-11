@@ -77,6 +77,13 @@ const Experience = ({ theme }) => {
                   : "bg-white border-t-4 border-blue-500 text-gray-800"
               } transform transition-all hover:scale-105`}
             >
+              <div className="flex justify-center mb-2">
+                <img
+                  src={experience.logo}
+                  alt={`${experience.company} logo`}
+                  className="h-12 w-auto rounded-full object-contain"
+                />
+              </div>
               <div className="flex items-center justify-between mb-2">
                 <h2
                   className={`text-md md:text-lg font-bold flex items-center ${
