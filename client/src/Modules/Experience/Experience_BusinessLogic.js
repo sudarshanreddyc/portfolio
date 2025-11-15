@@ -29,6 +29,7 @@ export class Experience_BusinessLogic {
           logo: PUBLIC_URL + "/assets/Deltadental.png",
           responsibilities: [
             "Developed microservices and UI for an insurance report generation dashboard using Java, Springboot and React, implementing a custom caching mechanism that reduced data retrieval time by 40% and improved dashboard load speed by 30%.",
+            "Automated end-to-end tests using Playwright to cover key regression scenarios, reducing manual testing by about 70% and lowering post-release issues by nearly 30%.",
           ],
           fromDate: "01/2024",
           toDate: "07/2024",
