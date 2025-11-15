@@ -125,6 +125,12 @@ export class Skills_BusinessLogic {
         { id: 27, skill: "Jest", proficiency: null, category: "Frameworks" },
         {
           id: 28,
+          skill: "Playwright",
+          proficiency: null,
+          category: "Frameworks",
+        },
+        {
+          id: 29,
           skill: "Tailwind-CSS",
           proficiency: null,
           category: "Frameworks",
@@ -132,19 +138,19 @@ export class Skills_BusinessLogic {
 
         // Developer Tools
         {
-          id: 29,
+          id: 30,
           skill: "Git",
           proficiency: null,
           category: "Developer Tools",
         },
         {
-          id: 30,
+          id: 31,
           skill: "VS Code",
           proficiency: null,
           category: "Developer Tools",
         },
         {
-          id: 31,
+          id: 32,
           skill: "Visual Studio",
           proficiency: null,
           category: "Developer Tools",
@@ -152,20 +158,20 @@ export class Skills_BusinessLogic {
 
         // Cloud/DevOps
         {
-          id: 32,
+          id: 33,
           skill: "Microsoft Azure",
           proficiency: null,
           category: "Cloud/DevOps",
         },
-        { id: 33, skill: "CI/CD", proficiency: null, category: "Cloud/DevOps" },
+        { id: 34, skill: "CI/CD", proficiency: null, category: "Cloud/DevOps" },
         {
-          id: 34,
+          id: 35,
           skill: "Cloudflare",
           proficiency: null,
           category: "Cloud/DevOps",
         },
         {
-          id: 35,
+          id: 36,
           skill: "Docker",
           proficiency: null,
           category: "Cloud/DevOps",
@@ -173,31 +179,31 @@ export class Skills_BusinessLogic {
 
         // Other Skills
         {
-          id: 36,
+          id: 37,
           skill: "Data structures and Algorithms",
           proficiency: null,
           category: "Other Skills",
         },
         {
-          id: 37,
+          id: 38,
           skill: "Elastic Search",
           proficiency: null,
           category: "Other Skills",
         },
         {
-          id: 38,
+          id: 39,
           skill: "Web API",
           proficiency: null,
           category: "Other Skills",
         },
         {
-          id: 39,
+          id: 40,
           skill: "Agile Methodologies",
           proficiency: null,
           category: "Other Skills",
         },
         {
-          id: 40,
+          id: 41,
           skill: "Problem Solving Skills",
           proficiency: null,
           category: "Other Skills",

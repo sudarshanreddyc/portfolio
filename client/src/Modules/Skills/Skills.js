@@ -69,6 +69,7 @@ const categorizedSkills = [
         icon: <SiTailwindcss className="text-[#38B2AC]" />,
         name: "Tailwind CSS",
       },
+      // { icon: <SiPlaywright className="text-[#6E5CF6]" />, name: "Playwright" },
     ],
   },
   {

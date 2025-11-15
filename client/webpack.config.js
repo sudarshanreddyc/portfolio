@@ -12,7 +12,7 @@ const PUBLIC_URL =
 console.log("Node env" + process.env.NODE_ENV);
 
 module.exports = {
-  mode: "production",
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: false,
   entry: "./src/index.js",
   output: {
@@ -56,6 +56,7 @@ module.exports = {
       patterns: [{ from: "public/assets", to: "assets" }],
     }),
     new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV), // ✅ Define process.env.NODE_ENV globally
       "process.env.PUBLIC_URL": JSON.stringify(PUBLIC_URL), // ✅ Define process.env.PUBLIC_URL globally
     }),
   ],
